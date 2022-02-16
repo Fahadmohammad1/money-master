@@ -33,7 +33,7 @@
                 <tr>
                   <td><label for="income">income:</label></td>
                   <td>
-                    <input type="number" name="" id="" />
+                    <input type="number" name="" id="income-input" />
                   </td>
                 </tr>
               </table>
@@ -43,40 +43,47 @@
                 <h4>Expences</h4>
                 <tr>
                   <td><label for="food">Food:</label></td>
-                  <td><input type="number" name="" id="" /></td>
+                  <td>
+                    <input value="0" type="number" name="" id="food-input" />
+                  </td>
                 </tr>
                 <tr>
                   <td><label for="rent">Rent:</label></td>
-                  <td><input type="number" name="" id="" /></td>
+                  <td>
+                    <input value="0" type="number" name="" id="rent-input" />
+                  </td>
                 </tr>
                 <tr>
                   <td><label for="clothes">Clothes:</label></td>
-                  <td><input type="number" name="" id="" /></td>
+                  <td><input type="number" name="" id="cloth-input" /></td>
                 </tr>
               </table>
               <button id="calculate-btn" class="btn btn-primary fw-bold">
                 Calculate
               </button>
-              <h4>Total Expences: <span>00</span></h4>
-              <h4>Balance: <span>00</span></h4>
+              <h4>Total Expences: <span id="expences-total">00</span></h4>
+              <h4>Balance: <span id="balance-total">00</span></h4>
 
               <!-- save input -->
               <table>
                 <tr>
                   <td><label for="save">Save: </label></td>
-                  <td><input type="number" name="" id="" /></td>
+                  <td><input type="number" name="" id="save-input" /></td>
                   <td>%</td>
                   <td>
-                    <button class="btn btn-primary fw-bold">Save</button>
+                    <button id="save-btn" class="btn btn-primary fw-bold">
+                      Save
+                    </button>
                   </td>
                 </tr>
               </table>
-              <h4>Saving Amount: <span>00</span></h4>
-              <h4>Remainig Balance: <span>00</span></h4>
+              <h4>Saving Amount: <span id="saving-total">00</span></h4>
+              <h4>Remainig Balance: <span id="remaining-total">00</span></h4>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
