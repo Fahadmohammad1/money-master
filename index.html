@@ -16,73 +16,78 @@
     <title>finance reckoning</title>
   </head>
   <body>
-    <header class="container">
+    <header class="container mb-5">
       <h1 class="fw-bolder text-center display-4">Finance Reckoning</h1>
     </header>
     <main>
       <section class="container">
         <div class="row">
-          <div class="col-12 col-lg-6 mb-5">
-            <img src="images/resized2 (1).jpg" alt="" />
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="border border-primary">
-              <!-- income input -->
-              <table>
-                <h4>Income</h4>
-                <tr>
-                  <td><label for="income">income:</label></td>
-                  <td>
-                    <input type="number" name="" id="income-input" />
-                  </td>
-                </tr>
-              </table>
-
-              <!-- expences input -->
-              <table>
-                <h4>Expences</h4>
-                <tr>
-                  <td><label for="food">Food:</label></td>
-                  <td>
-                    <input type="number" name="" id="food-input" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><label for="rent">Rent:</label></td>
-                  <td>
-                    <input type="number" name="" id="rent-input" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><label for="clothes">Clothes:</label></td>
-                  <td><input type="number" name="" id="cloth-input" /></td>
-                </tr>
-              </table>
-              <button id="calculate-btn" class="btn btn-primary fw-bold">
-                Calculate
-              </button>
-              <h4>Total Expences: <span id="expences-total">00</span></h4>
-              <h4>Balance: <span id="balance-total">00</span></h4>
-
-              <!-- save input -->
-              <table>
-                <tr>
-                  <td><label for="save">Save: </label></td>
-                  <td><input type="number" name="" id="save-input" /></td>
-                  <td>%</td>
-                  <td>
-                    <button id="save-btn" class="btn btn-primary fw-bold">
-                      Save
-                    </button>
-                  </td>
-                </tr>
-              </table>
-              <h4>Saving Amount: <span id="saving-total">00</span></h4>
-              <h4>Remainig Balance: <span id="remaining-total">00</span></h4>
+            <!-- image -->
+            <div class="col-12 col-lg-6">
+              <img class="img-fluid pt-lg-5" src="images/image3.jpg" alt="">
+        </div>
+            <div class="col-12 col-lg-6">
+                <div class=" ms-lg-5 text-center d-flex flex-column align-items-center">
+                  <!-- income input -->
+                  <table>
+                    <h4>Income</h4>
+                    <tr>
+                      <td class="fs-5"><label for="income">income:</label></td>
+                      <td>
+                        <input class="mb-2" type="number" name="" id="income-input" />
+                      </td>
+                    </tr>
+                  </table>
+  
+                  <!-- expences input -->
+                  <table>
+                    <h4 class="mb-sm-2">Expences</h4>
+                    <tr>
+                      <td class="fs-5"><label for="food">Food:</label></td>
+                      <td>
+                        <input class="mb-1 mb-sm-2" type="number" name="" id="food-input" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fs-5"><label for="rent">Rent:</label></td>
+                      <td>
+                        <input class="mb-1 mb-sm-2" type="number" name="" id="rent-input" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fs-5"><label for="clothes">Clothes:</label></td>
+                      <td><input class="mb-1 mb-sm-2" type="number" name="" id="cloth-input" /></td>
+                    </tr>
+                  </table>
+                  <button id="calculate-btn" class="btn btn-primary fw-bold">
+                    Calculate
+                  </button>
+                  <h4>Total Expences: <span id="expences-total">00</span></h4>
+                  <h4>Balance: <span id="balance-total">00</span></h4>
+  
+                  <!-- save input -->
+                  <table>
+                    <tr>
+                      <td class="fs-5"><label for="save">Save: </label></td>
+                      <td><input type="number" name="" id="save-input" /></td>
+                      <td>%</td>
+                      <td>
+                        <button id="save-btn" class="btn btn-primary fw-bold">
+                          Save
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                  <h4>Saving Amount: <span id="saving-total">00</span></h4>
+                  <h4>Remainig Balance: <span id="remaining-total">00</span></h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- error massage section -->
+      <p id="nan-error" class="text-center">❌ please input valid Amount</p>
     </main>
     <script src="js/main.js"></script>
   </body>

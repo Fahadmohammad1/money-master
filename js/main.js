@@ -2,7 +2,14 @@
 function getInput(inputOf) {
   const inputValue = document.getElementById(inputOf + "-input");
   const amount = parseFloat(inputValue.value);
-  return amount;
+  // error handling for number and negative value
+  if (isNaN(amount) || amount < 0) {
+    const nanError = (document.getElementById("nan-error").style.display =
+      "block");
+    return nanError;
+  } else {
+    return amount;
+  }
 }
 // get innertext function
 function getTextInput(textOf) {
@@ -21,7 +28,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const expencesTotal = foodCost + rentCost + clothCost;
   expencessInput.innerText = expencesTotal;
 
-  // balance calculate
+  // balance calculation
   const incomeAmount = getInput("income");
 
   const calculateBalance = incomeAmount - parseFloat(expencesTotal);
@@ -39,16 +46,17 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const incomeInput = getInput("income");
 
   const savingTotal = (incomeInput * saveInput) / 100;
-
-  const savingInput = getTextInput("saving");
-  savingInput.innerText = savingTotal;
-
-  // remaining calculation
   const totalBalance = getTextInput("balance");
   const totalBalanceText = parseFloat(totalBalance.innerText);
+  if (savingTotal < totalBalanceText) {
+    document.getElementById("nan-error").style.display = "block";
+  } else {
+    const savingInput = getTextInput("saving");
+    savingInput.innerText = savingTotal;
+  }
 
+  // remaining calculation
   const remainingInput = getTextInput("remaining");
-  // console.log(remainingInput);
   const remainingTotal = totalBalanceText - parseFloat(savingTotal);
   remainingInput.innerText = remainingTotal;
 });

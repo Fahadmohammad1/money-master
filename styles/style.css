@@ -1,3 +1,14 @@
 header h1 {
   color: rgba(49, 165, 172, 1);
 }
+
+#nan-error {
+  display: none;
+}
+#save-input {
+  width: 132px;
+}
+#image {
+  background-image: url(images/image1.jpg);
+  object-fit: cover;
+}
