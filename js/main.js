@@ -42,4 +42,13 @@ document.getElementById("save-btn").addEventListener("click", function () {
 
   const savingInput = getTextInput("saving");
   savingInput.innerText = savingTotal;
+
+  // remaining calculation
+  const totalBalance = getTextInput("balance");
+  const totalBalanceText = parseFloat(totalBalance.innerText);
+
+  const remainingInput = getTextInput("remaining");
+  // console.log(remainingInput);
+  const remainingTotal = totalBalanceText - parseFloat(savingTotal);
+  remainingInput.innerText = remainingTotal;
 });
