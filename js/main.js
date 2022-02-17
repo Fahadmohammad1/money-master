@@ -3,11 +3,11 @@ function getInput(inputOf) {
   const inputValue = document.getElementById(inputOf + "-input");
   const amount = parseFloat(inputValue.value);
   // error handling for number and negative value
-  if (isNaN(amount) || amount < 0) {
+  if (typeof amount != "number" || amount < 0) {
     const nanError = (document.getElementById("nan-error").style.display =
       "block");
-    return nanError;
   } else {
+    document.getElementById("calculate-btn").setAttribute("disabled", true);
     return amount;
   }
 }
@@ -30,6 +30,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   // balance calculation
   const incomeAmount = getInput("income");
+  if (expencesTotal > incomeAmount) {
+    alert("expences must be less than Income");
+  }
 
   const calculateBalance = incomeAmount - parseFloat(expencesTotal);
 
@@ -46,14 +49,12 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const incomeInput = getInput("income");
 
   const savingTotal = (incomeInput * saveInput) / 100;
+
   const totalBalance = getTextInput("balance");
   const totalBalanceText = parseFloat(totalBalance.innerText);
-  if (savingTotal < totalBalanceText) {
-    document.getElementById("nan-error").style.display = "block";
-  } else {
-    const savingInput = getTextInput("saving");
-    savingInput.innerText = savingTotal;
-  }
+
+  const savingInput = getTextInput("saving");
+  savingInput.innerText = savingTotal;
 
   // remaining calculation
   const remainingInput = getTextInput("remaining");
